@@ -27,10 +27,10 @@ const Main = () => {
             <nav class="navbar navbar-light bg-secondary justify-content-center">
                 <form class="form-inline d-flex gap-2">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </nav>
-            <div className='d-flex flex-wrap'>
+            <div className='d-flex flex-wrap gap-5 justify-content-center mt-3'>
             {movie?.map((item, index) => <MovieCard item={item} key={index} />)}
             </div>
         </div>

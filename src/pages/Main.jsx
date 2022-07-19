@@ -30,6 +30,7 @@ const Main = () => {
         try {
             const searchdata = await axios.get(url2)
             setMovie(searchdata.data.results)
+            setLoading(false)
         } catch (error) {
             console.log(error);
         }

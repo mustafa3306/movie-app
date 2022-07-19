@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({ item }) => {
-    const { title, vote_average, overview, poster_path } = item
-    console.log(item)
+    const { title, vote_average, overview, poster_path } = item;
+    const navigate = useNavigate();
+    
+    const handleDetail = () => {
+        navigate("login")
+    }
+
     return (
-        <div className="card" style={{ width: '18rem' }}>
+        <div className="card" style={{ width: '18rem' }} onClick={handleDetail}>
             <img src={'https://image.tmdb.org/t/p/original' + poster_path} className="card-img-top" alt={title} />
             <div className="card-body" >
                 <h5 className="card-title" > {title}</h5 >

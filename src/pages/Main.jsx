@@ -37,12 +37,12 @@ const Main = () => {
 
     return (
         <div >
-            <nav class="navbar navbar-light bg-secondary justify-content-center">
-                <form class="form-inline d-flex gap-2" onSubmit={getSearch}>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            <nav className="navbar navbar-light bg-secondary justify-content-center">
+                <form className="form-inline d-flex gap-2" onSubmit={getSearch}>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                     value={search}
                     onChange={(e)=> setSearch(e.target.value)}/>
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                    <button className="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </nav>
             <div className='d-flex flex-wrap gap-5 justify-content-center mt-3'>

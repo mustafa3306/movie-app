@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 const MovieCard = ({ item }) => {
+ 
     const [detail, setDetail] = useState("");
     const { title, vote_average, overview, poster_path, backdrop_path, id } = item;
     // console.log(item.id);
@@ -13,22 +14,24 @@ const MovieCard = ({ item }) => {
     const url3 = `https://api.themoviedb.org/3/movie/${id}?api_key=${APP_KEY}`
     
     const handleDetail = async () => {
+
         try {
             const getdetail = await axios.get(url3)
-            setDetail(getdetail.data)
+            setDetail(getdetail.data);
+
         } catch (error) {
             console.log(error);
         }
         navigate("movieDetail")
     }
 
-    console.log(detail);
+    // console.log(detail);
 
 
 
     return (
         <div className="card" style={{ width: '18rem' }} onClick={handleDetail}>
-            <img src={'https://image.tmdb.org/t/p/original' + poster_path && backdrop_path} className="card-img-top" alt={title} />
+            <img src={'https://image.tmdb.org/t/p/original' + poster_path} className="card-img-top" alt={title} />
             <div className="card-body" >
                 <h5 className="card-title" > {title}</h5 >
                 {/* <p className="card-text" >{overview}</p> */}

@@ -6,9 +6,6 @@ const Login = () => {
     return (
         <div>
             <div>
-                <form action="">
-
-                </form>
                 <button >Login</button>
                 <button onClick={signInWithGoogle}>Enter with Google</button>
             </div>

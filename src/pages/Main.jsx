@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../components/MovieCard'
+import Loading from "../assets/loading.gif";
 
 const Main = () => {
     const [movie, setMovie] = useState([]);
     const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(true)
 
     const APP_KEY = process.env.REACT_APP_APP_KEY;
     // const url = `https://api.themoviedb.org/3/discover/movie?api_key=8ce831c185de710fb76fb0da9816d7fb`
@@ -15,6 +17,7 @@ const Main = () => {
         try {
             const getdata = await axios.get(url1)
             setMovie(getdata.data.results)
+            setLoading(false)
         } catch (error) {
             console.log(error);
         }
@@ -34,6 +37,10 @@ const Main = () => {
     }
     // console.log(search);
     // console.log(movie);
+    if(loading){
+        return <img src={Loading} alt="" />
+    }
+
 
     return (
         <div >

@@ -1,19 +1,16 @@
 import React from 'react';
-import { auth, provider } from '../auth/firebase'
+import { signInWithGoogle } from "../auth/firebase";
 
-const Login = ({ setUser }) => {
-    const logIn = () => {
-        auth.signInWithPopup(provider)
-            .catch((error) => alert(error.message))
-    }
+const Login = () => {
+
     return (
         <div>
             <div>
                 <form action="">
 
                 </form>
-                <button>Login</button>
-                <button onClick={logIn}>Enter with Google</button>
+                <button >Login</button>
+                <button onClick={signInWithGoogle}>Enter with Google</button>
             </div>
         </div>
     )

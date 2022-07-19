@@ -11,7 +11,7 @@ import PrivateRouter from './PrivateRouter';
 
 const Router = () => {
     const [user, setUser] = useState(null);
-
+    
     return (
         <MovieContext.Provider value={{ user, setUser }}>
             <BrowserRouter>

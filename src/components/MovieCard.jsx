@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const MovieCard = ({ item }) => {
     const [detail, setDetail] = useState("");
-    const { title, vote_average, overview, poster_path, id } = item;
+    const { title, vote_average, overview, poster_path, backdrop_path, id } = item;
     // console.log(item.id);
     const navigate = useNavigate();
     const APP_KEY = process.env.REACT_APP_APP_KEY;
@@ -28,7 +28,7 @@ const MovieCard = ({ item }) => {
 
     return (
         <div className="card" style={{ width: '18rem' }} onClick={handleDetail}>
-            <img src={'https://image.tmdb.org/t/p/original' + poster_path} className="card-img-top" alt={title} />
+            <img src={'https://image.tmdb.org/t/p/original' + poster_path && backdrop_path} className="card-img-top" alt={title} />
             <div className="card-body" >
                 <h5 className="card-title" > {title}</h5 >
                 {/* <p className="card-text" >{overview}</p> */}

@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 const MovieCard = ({ item }) => {
-    const { title, vote_average, overview, poster_path } = item;
+    const [detail, setDetail] = useState("");
+    const { title, vote_average, overview, poster_path, id } = item;
+    // console.log(item.id);
     const navigate = useNavigate();
+    const APP_KEY = process.env.REACT_APP_APP_KEY;
+    const url3 = `https://api.themoviedb.org/3/movie/${id}?api_key=${APP_KEY}`
     
-    const handleDetail = () => {
+    const handleDetail = async () => {
+        try {
+            const getdetail = await axios.get(url3)
+            setDetail(getdetail.data)
+        } catch (error) {
+            console.log(error);
+        }
         navigate("movieDetail")
     }
+
+    console.log(detail);
+
+
 
     return (
         <div className="card" style={{ width: '18rem' }} onClick={handleDetail}>

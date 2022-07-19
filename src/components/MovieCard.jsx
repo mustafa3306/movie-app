@@ -6,7 +6,7 @@ const MovieCard = ({ item }) => {
     const navigate = useNavigate();
     
     const handleDetail = () => {
-        navigate("login")
+        navigate("movieDetail")
     }
 
     return (

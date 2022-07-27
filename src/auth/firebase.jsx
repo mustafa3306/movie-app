@@ -14,13 +14,13 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAedEpxJ3nRKZ9shi23O6HJBJ4eQ70t4ZA",
-  authDomain: "movie-app-981ff.firebaseapp.com",
-  projectId: "movie-app-981ff",
-  storageBucket: "movie-app-981ff.appspot.com",
-  messagingSenderId: "924576200561",
-  appId: "1:924576200561:web:73259f30d081fe0e62e8d0",
-  measurementId: "G-XKPY9ZT97S"
+  apiKey: process.env.REACT_FIRE_API,
+  authDomain: process.env.REACT_AUTH_DOM,
+  projectId: process.env.REACT_PROJECT_ID,
+  storageBucket: process.env.REACT_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_MESSAGING,
+  appId: process.env.REACT_APP_ID,
+  measurementId: process.env.REACT_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);

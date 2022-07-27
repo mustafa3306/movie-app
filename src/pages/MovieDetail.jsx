@@ -7,7 +7,7 @@ const MovieDetail = () => {
     const [detail, setDetail] = useState('');
     const [videoKey, setVideoKey] = useState();
     const { id } = useParams();
-    const API_KEY = process.env.REACT_APP_TMDB_KEY;
+    const API_KEY = process.env.REACT_APP_APP_KEY;
     const url3 = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
     const {
         title,

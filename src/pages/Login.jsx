@@ -1,5 +1,4 @@
 import React from 'react';
-import { signInWithGoogle } from "../auth/firebase";
 
 const Login = () => {
 
@@ -7,7 +6,7 @@ const Login = () => {
         <div>
             <div>
                 <button >Login</button>
-                <button onClick={signInWithGoogle}>Enter with Google</button>
+                <button onClick={null}>Enter with Google</button>
             </div>
         </div>
     )

@@ -17,8 +17,8 @@ const Navbar = () => {
                 </>
                 :
                 <>
-                <h1>{currentUser.displayName}</h1>
-                <Link to="login" className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Logout</Link>
+                <h1>{currentUser?.displayName} buradayım</h1>
+                <button onClick={null} className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Logout</button>
                 </>
                 }
             </div>

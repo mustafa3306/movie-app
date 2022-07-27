@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAedEpxJ3nRKZ9shi23O6HJBJ4eQ70t4ZA",
@@ -16,18 +16,15 @@ export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
-export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const name = result.user.displayName;
-      const email = result.user.email;
-      const profilePic = result.user.photoURL;
+export const createUser = async(email,password,displayName) => {
+  let userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  )
+  await updateProfile(auth.currentUser, {
+    displayName: displayName,
+  });
 
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("profilePic", profilePic);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+
+}

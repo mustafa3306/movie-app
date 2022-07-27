@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {Link} from "react-router-dom";
+import { logOut } from '../auth/firebase';
 import {MovieContext} from "../context/AuthContext";
 
 const Navbar = () => {
@@ -12,13 +13,13 @@ const Navbar = () => {
             <div className='mx-4'>
                 {currentUser ?
                 <>
-                <Link to="login" className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Login</Link>
-                <Link to="register" className="btn btn-outline-light bg-primary text-white" type="submit">Register</Link>
+                <h1>{currentUser.displayName}</h1>
+                <button onClick={()=>logOut()} className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Logout</button>
                 </>
                 :
                 <>
-                <h1>{currentUser?.displayName} buradayım</h1>
-                <button onClick={null} className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Logout</button>
+                <Link to="login" className="btn btn-outline-light bg-primary text-white mx-2" type="submit">Login</Link>
+                <Link to="register" className="btn btn-outline-light bg-primary text-white" type="submit">Register</Link>
                 </>
                 }
             </div>

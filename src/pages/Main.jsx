@@ -39,7 +39,7 @@ const Main = () => {
     // console.log(search);
     // console.log(movie);
     if(loading){
-        return <img style={{margin:"auto"}} src={Loading} alt="" />
+        return <div className='loading'><img src={Loading} alt="" /></div>
     }
 
 

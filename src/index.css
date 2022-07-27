@@ -127,3 +127,14 @@ body {
   margin-left: 1.5rem;
   cursor: pointer;
 }
+
+.loading {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading img {
+  width: 100%;
+}

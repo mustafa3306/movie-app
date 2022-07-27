@@ -10,10 +10,8 @@ import PrivateRouter from './PrivateRouter';
 
 
 const Router = () => {
-    const [user, setUser] = useState(null);
-    
+        
     return (
-        <MovieContext.Provider value={{ user, setUser }}>
             <BrowserRouter>
                 <Navbar />
                 <Routes>
@@ -25,7 +23,6 @@ const Router = () => {
                     </Route>
                 </Routes>
             </BrowserRouter>
-        </MovieContext.Provider>
     )
 }
 

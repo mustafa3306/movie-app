@@ -6,7 +6,7 @@ import { MovieContext } from '../context/AuthContext';
 const Navbar = () => {
 
     const {currentUser}=useContext(MovieContext)
-    console.log(currentUser)
+    // console.log(currentUser)
     return (
         <nav className="navbar navbar-light bg-primary justify-content-between text-white">
             <h1 className="navbar-brand mx-4 text-white d-5">React Movie App</h1>
